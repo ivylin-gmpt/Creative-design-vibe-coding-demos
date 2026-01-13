@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Projects</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --accent: #0066cc;
+            --gray: #666;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .bio {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .project-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: project-counter;
+        }
+
+        .project-item {
+            display: flex;
+            align-items: baseline;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: color 0.2s;
+        }
+
+        .project-item:hover {
+            color: var(--accent);
+        }
+
+        .project-number {
+            font-family: monospace;
+            color: var(--gray);
+            font-size: 0.9rem;
+            width: 40px;
+            flex-shrink: 0;
+        }
+
+        .project-content {
+            flex: 1;
+        }
+
+        .project-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-desc {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+        <p class="bio">A collection of 25 selected works.</p>
+    </header>
+
+    <main>
+        <ul class="project-list" id="list">
+            <!-- Injected Javascript -->
+        </ul>
+    </main>
+
+    <script src="project_data.js"></script>
+    <script>
+        const container = document.getElementById('list');
+
+        // Check if topSongs exists from project_data.js, otherwise generate dummy data
+        const projects = (typeof topSongs !== 'undefined') ? topSongs : Array.from({ length: 25 }, (_, i) => ({
+            title: `Project ${i + 1}`,
+            desc: "Description of the project goes here."
+        }));
+
+        // Render 25 items
+        projects.slice(0, 25).forEach((p, index) => {
+            const li = document.createElement('li');
+            li.className = 'project-item';
+
+            // Number formatting 01, 02.. 25
+            const num = (index + 1).toString().padStart(2, '0');
+
+            li.innerHTML = `
+                <span class="project-number">${num}</span>
+                <div class="project-content">
+                    <a href="#" class="project-link">
+                        <span class="project-title">${p.title}</span>
+                        <span class="project-desc">${p.desc.substring(0, 100)}${p.desc.length > 100 ? '...' : ''}</span>
+                    </a>
+                </div>
+            `;
+            container.appendChild(li);
+        });
+    </script>
+</body>
+
+</html>

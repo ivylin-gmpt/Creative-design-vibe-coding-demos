@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Design Team · Showcase</title>
+    <!-- Fonts: Anton (Condensed Bold), Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Cinematic Grain Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- UI Header -->
+    <header class="app-header">
+        <div class="header-left">
+            <h1 class="brand-title">Creative Design Team: Vibe Coding Demo Showcase</h1>
+            <div class="brand-helper-wrapper">
+                <svg width="20" height="10" viewBox="0 0 30 10" fill="none" class="squiggle">
+                    <path d="M1 5C5 5 5 9 9 9C13 9 13 1 17 1C21 1 21 5 25 5" stroke="currentColor" stroke-width="2" />
+                </svg>
+                <p class="brand-helper">Drag the carousel to be moved</p>
+            </div>
+        </div>
+
+        <div class="header-center">
+            <div class="search-container">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="searchInput" placeholder="TYPE TO SEARCH..." autocomplete="off">
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="counter" id="activeCounter">01 — --</div>
+        </div>
+    </header>
+
+    <!-- Main Canvas -->
+    <main class="viewport">
+        <div class="carousel-track" id="carouselTrack">
+            <!-- Cards injected by JS -->
+        </div>
+    </main>
+
+    <!-- Minimalist Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <button class="modal-close-btn" id="modalClose">&times;</button>
+
+            <!-- Navigation Buttons -->
+            <button class="modal-nav-btn prev" id="modalPrev">&#8592;</button>
+            <button class="modal-nav-btn next" id="modalNext">&#8594;</button>
+
+            <div class="modal-media-wrapper" id="modalMedia">
+                <!-- Video/Content injected here -->
+            </div>
+
+            <div class="modal-info">
+                <div class="info-text">
+                    <div class="modal-count-status" id="modalCounter">01 / 25</div>
+                    <h2 id="modalTitle">Project Title</h2>
+                    <p class="modal-creator" id="modalCreator">Creator Name</p>
+                    <p class="modal-desc" id="modalDesc">Two lines of project description go here to explain the vision
+                        and experimental approach.</p>
+                </div>
+                <a href="#" id="modalLink" target="_blank" class="modal-cta">VISIT PROJECT →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data & Logic -->
+    <script src="projects.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
