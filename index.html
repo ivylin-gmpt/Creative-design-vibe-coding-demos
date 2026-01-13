@@ -21,16 +21,20 @@
     <!-- UI Header -->
     <header class="app-header">
         <div class="header-left">
-            <h1 class="brand-title">Creative Design Team: Vibe Coding Demo Showcase</h1>
+            <h1 class="brand-title">
+                <span class="title-bold">Vibe coding demos</span><br>
+                <span class="title-regular">by creative design team</span>
+            </h1>
             <div class="brand-helper-wrapper">
                 <svg width="20" height="10" viewBox="0 0 30 10" fill="none" class="squiggle">
                     <path d="M1 5C5 5 5 9 9 9C13 9 13 1 17 1C21 1 21 5 25 5" stroke="currentColor" stroke-width="2" />
                 </svg>
-                <p class="brand-helper">Drag the carousel to be moved</p>
+                <p class="brand-helper">Hover stack to pause cycle</p>
             </div>
         </div>
 
-        <div class="header-center">
+        <div class="header-right">
+            <div class="counter" id="activeCounter">01 — --</div>
             <div class="search-container">
                 <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -40,17 +44,15 @@
                 <input type="text" id="searchInput" placeholder="TYPE TO SEARCH..." autocomplete="off">
             </div>
         </div>
-
-        <div class="header-right">
-            <div class="counter" id="activeCounter">01 — --</div>
-        </div>
     </header>
 
     <!-- Main Canvas -->
-    <main class="viewport">
-        <div class="carousel-track" id="carouselTrack">
-            <!-- Cards injected by JS -->
-        </div>
+    <main class="stack-container" id="stackTrack">
+        <!-- Background Deck Layers -->
+        <div class="stack-background" id="stackBackground"></div>
+
+        <!-- Active/Animating Cards Area -->
+        <div class="stack-active-area" id="stackActiveArea"></div>
     </main>
 
     <!-- Minimalist Modal -->
