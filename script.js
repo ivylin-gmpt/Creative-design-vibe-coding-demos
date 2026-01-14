@@ -89,8 +89,8 @@ function createCardElement(item) {
                 height: 100%; font-family: 'Anton', sans-serif; font-weight: 800; 
                 color: item.color === '#fff'}; text-align: center;
             ">
-                <div style="font-size: 8rem; line-height: 0.8; opacity: 1;">${item.id}</div>
-                <div style="font-size: 2rem; font-weight: 100; text-transform: uppercase; margin-top: 1rem; opacity: 0.8;">${item.title}</div>
+                <div style="font-size: 12rem; line-height: 1; opacity: 1;">${item.id}</div>
+                <div style="font-size: 4rem; font-weight: 100; text-transform: uppercase; margin-top: 1rem; opacity: 0.8;">${item.title}</div>
             </div> 
             <div style="
                 position: absolute; bottom: 1.5rem; left: 1.5rem; 
@@ -155,10 +155,13 @@ function setupEventListeners() {
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase();
 
-        state.currentFilteredData = state.allData.filter(item =>
-            item.title.toLowerCase().includes(query) ||
-            item.creator.toLowerCase().includes(query)
-        );
+        state.currentFilteredData = state.allData.filter(item => {
+            const idStr = String(item.id).padStart(2, '0');
+            return item.title.toLowerCase().includes(query) ||
+                item.creator.toLowerCase().includes(query) ||
+                idStr.includes(query) ||
+                String(item.id).includes(query);
+        });
 
         resetStack();
     });

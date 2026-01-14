@@ -7,13 +7,40 @@
 
 window.GALLERY_PROJECTS = [
     {
-        creator: "@Taylor Henning",
-        title: "TikTok adBuilder Engine",
-        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Taylor_TikTokAdBuilder.png",
+        creator: "@Rong Wang 王蓉",
+        title: "Dots Connector",
+        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Rong_Dots%20Connector.png",
         videoId: "",
-        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Taylor_TikTokAdBuilder.mov",
-        link: "https://ai.studio/apps/drive/1x5QNW4stKMcETLwFzpBfzw4cXZeeZGC-?fullscreenApplet=true",
-        desc: "A slot machine for ad creatives.\n- It creates fresh, almost ready-to-build ad concepts by remixing different layouts, styles, and content.\n- Helps with brainstorming new ideas for ad creatives"
+        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Rong_Dots%20connector.mov",
+        link: "Dots Connector - Quick Start Guide",
+        desc: "One click to capture, AI to summarize, Bitable to organize. Connect all dots!"
+    },
+    {
+        creator: "@Cong Chen 陈聪",
+        title: "Fortune Cookie",
+        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Cong_Fortune%20Cookie.png",
+        videoId: "",
+        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Cong_Fourtune_Cookie.gif",
+        link: "https://www.figma.com/community/widget/1591724239831718838",
+        desc: "'Fortune Cookie' is a figma widget designed to add a small moment of delight to design work.. Just like the real thing, click to 'crack' the cookie and reveal a hidden message on a beautifully textured piece of paper."
+    },
+    {
+        creator: "@Zhiyi Ma 马至一",
+        title: "GTA6",
+        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Zhiyi_.GTA.6png.png",
+        videoId: "",
+        videoUrl: "",
+        link: "https://thegta6.vercel.app/",
+        desc: "The only GTA6 you can play right now: a frantic survival game where the police are replaced by cookie banners and your only mission is to find the real x button."
+    },
+    {
+        creator: "@Ang Li 李昂",
+        title: "TTO_brief_review preference prototype",
+        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Ang_TTO_Brief_review_preference_prototype.png",
+        videoId: "",
+        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Ang_TTO_brief_review%20preference%20prototype.gif",
+        link: "https://ai.studio/apps/drive/1SswR94bw5ypVUZTa0drqv8sjgZzUSe8g?fullscreenApplet=true",
+        desc: "Prototype of a design solution for a real PRD in 26'Q1"
     },
     {
         creator: "@Cassy Lim",
@@ -23,6 +50,15 @@ window.GALLERY_PROJECTS = [
         videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Cassy_video.mov",
         link: "https://ai.studio/apps/drive/1YUFR9HDmxneqYVYwE3yxeeEHPn4K9TQU",
         desc: "See how 'Tiktoky' your video is before you post \n- Provide concrete suggestions or actions to enhance your video. E.g add voiceover, music or strengthen your hook \n- Predicts how well your tiktok video is going to perform against the industry/ country selected \n- Explain why it works or doesn't work"
+    },
+    {
+        creator: "@Taylor Henning",
+        title: "TikTok adBuilder Engine",
+        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Taylor_TikTokAdBuilder.png",
+        videoId: "",
+        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Taylor_TikTokAdBuilder.mov",
+        link: "https://ai.studio/apps/drive/1x5QNW4stKMcETLwFzpBfzw4cXZeeZGC-?fullscreenApplet=true",
+        desc: "A slot machine for ad creatives.\n- It creates fresh, almost ready-to-build ad concepts by remixing different layouts, styles, and content.\n- Helps with brainstorming new ideas for ad creatives"
     },
     {
         creator: "@Jianzhou Song 宋建洲",
@@ -43,13 +79,13 @@ window.GALLERY_PROJECTS = [
         desc: "A cyberpunk-style Snake game built for speed and reflex.\nNeon visuals, smooth controls, and escalating challenge in a minimalist digital arena."
     },
     {
-        creator: "@Rong Wang 王蓉",
-        title: "Dots Connector",
-        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Rong_Dots%20Connector.png",
+        creator: "@Eva Luo",
+        title: "Particle",
+        image: "",
         videoId: "",
-        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Rong_Dots%20connector.mov",
-        link: "Dots Connector - Quick Start Guide",
-        desc: "One click to capture, AI to summarize, Bitable to organize. Connect all dots!"
+        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Eva_Recording_Particle.mov",
+        link: "",
+        desc: ""
     },
     {
         creator: "@Preacher Yang 杨皓迪 and Max",
@@ -61,33 +97,6 @@ window.GALLERY_PROJECTS = [
         desc: "Dominate the neon arena in NEON Hockey! Choose your geometric mech—from the swift Striker to the lethal Sector Samurai. Master unique skills like shadow clones and whirlwind slashes in this fast-paced 1v1 physics battle. Control the puck, outsmart your rival, and unleash magnetic chaos to score. Are you ready to win?"
     },
     {
-        creator: "@Eva Luo",
-        title: "Particle",
-        image: "",
-        videoId: "",
-        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Eva_Recording_Particle.mov",
-        link: "",
-        desc: ""
-    },
-    {
-        creator: "@Ang Li 李昂",
-        title: "TTO_brief_review preference prototype",
-        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Ang_TTO_Brief_review_preference_prototype.png",
-        videoId: "",
-        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Ang_TTO_brief_review%20preference%20prototype.gif",
-        link: "https://ai.studio/apps/drive/1SswR94bw5ypVUZTa0drqv8sjgZzUSe8g?fullscreenApplet=true",
-        desc: "Prototype of a design solution for a real PRD in 26'Q1"
-    },
-    {
-        creator: "@Cong Chen 陈聪",
-        title: "Fortune Cookie",
-        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Cong_Fortune%20Cookie.png",
-        videoId: "",
-        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Cong_Fourtune_Cookie.gif",
-        link: "https://www.figma.com/community/widget/1591724239831718838",
-        desc: "'Fortune Cookie' is a figma widget designed to add a small moment of delight to design work.. Just like the real thing, click to 'crack' the cookie and reveal a hidden message on a beautifully textured piece of paper."
-    },
-    {
         creator: "@Matt R",
         title: "Keystone Icon Forge",
         image: "",
@@ -95,15 +104,6 @@ window.GALLERY_PROJECTS = [
         videoUrl: "",
         link: "https://ai.studio/apps/drive/1FV4w9IpFVT_5vx7B27hos8eI2U-mrLIK?fullscreenApplet=true",
         desc: "When you can't find the perfect Keystone Icon, you can use Icon Forge to generate one."
-    },
-    {
-        creator: "@Zhiyi Ma 马至一",
-        title: "GTA6",
-        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Zhiyi_.GTA.6png.png",
-        videoId: "",
-        videoUrl: "",
-        link: "https://thegta6.vercel.app/",
-        desc: "The only GTA6 you can play right now: a frantic survival game where the police are replaced by cookie banners and your only mission is to find the real x button."
     },
     {
         creator: "@Muchen Feng",
