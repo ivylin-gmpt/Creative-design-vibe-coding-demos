@@ -15,8 +15,9 @@
 
 <body>
 
-    <!-- Cinematic Grain Overlay -->
-    <div class="noise-overlay"></div>
+    <!-- Cinematic Grain Overlay (Removed as per transition to smooth vignette) -->
+    <!-- <div class="noise-overlay"></div> -->
+    <div class="vignette-overlay"></div>
 
     <!-- UI Header -->
     <header class="app-header">
@@ -61,25 +62,33 @@
         <div class="modal-container">
             <button class="modal-close-btn" id="modalClose">&times;</button>
 
-            <!-- Navigation Buttons -->
-            <button class="modal-nav-btn prev" id="modalPrev">&#8592;</button>
-            <button class="modal-nav-btn next" id="modalNext">&#8594;</button>
-
             <div class="modal-media-wrapper" id="modalMedia">
 
                 <!-- Video/Content injected here -->
             </div>
 
             <div class="modal-info">
+
+                <!-- Navigation Buttons -->
+                <button class="modal-nav-btn prev" id="modalPrev">&#8592;</button>
+                <button class="modal-nav-btn next" id="modalNext">&#8594;</button>
+
+
                 <div class="info-text">
                     <div class="modal-count-status" id="modalCounter">01 / 25</div>
-                    <h2 id="modalTitle">Project Title</h2>
+                    <div class="modal-header-row">
+                        <h2 id="modalTitle">
+                            Project Title
+                        </h2>
+                    </div>
                     <p class="modal-creator" id="modalCreator">Creator Name</p>
                     <p class="modal-desc" id="modalDesc">Two lines of project description go here to explain the vision
                         and experimental approach.</p>
+                    <a href="#" id="modalLink" target="_blank" class="modal-cta">Visit project→</a>
+
                 </div>
-                <a href="#" id="modalLink" target="_blank" class="modal-cta">VISIT PROJECT →</a>
             </div>
+
         </div>
     </div>
 

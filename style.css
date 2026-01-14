@@ -43,7 +43,7 @@ body {
 
 .modal-info {
   background: #000;
-  padding: 3rem 4rem;
+  padding: 2rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -55,8 +55,29 @@ body {
   opacity: 0;
 }
 
+/* --- CINEMATIC VIGNETTE --- */
+.vignette-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, rgba(5, 5, 5, 0.4) 0%, rgba(26, 26, 26, 0.7) 100%);
+  pointer-events: none;
+  z-index: 15;
+  /* Above background/cards, below UI text */
+}
+
+.modal-header-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+}
+
 .info-text {
-  max-width: 60%;
+  max-width: 80%;
+  /* Increased for horizontal title/cta */
 }
 
 .modal-info h2 {
@@ -67,30 +88,30 @@ body {
   /* Semi-bold */
   color: #fff;
   line-height: 1.1;
-  margin-bottom: 0.5rem;
   text-transform: uppercase;
 }
 
 .modal-creator {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #fff;
   /* Red creator name */
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
 .modal-desc {
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: 14px;
   color: #888;
-  line-height: 1.6;
+  line-height: 1.4;
   max-width: 600px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  padding-bottom: 1rem;
   /* Standard property */
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -101,19 +122,21 @@ body {
   text-decoration: none;
   font-family: var(--font-body);
   /* Using Inter for weight control */
-  font-size: 16px;
+  font-size: 12px;
   /* User requested 16px */
   font-weight: 400;
   /* Regular weight */
   letter-spacing: 0.05em;
-  border-bottom: 1.5px solid #fff;
-  padding-bottom: 4px;
+  border-bottom: 1px solid #fff;
+  padding-top: 0rem;
   transition: opacity 0.3s;
   flex-shrink: 0;
+  opacity: 0.7;
+
 }
 
 .modal-cta:hover {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 /* --- HEADER UI --- */
@@ -357,11 +380,11 @@ body {
   background: #1a1a1a;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
   transition: box-shadow 0.6s var(--ease-out), border-color 0.3s;
 }
 
-/* --- DARK OVERLAY --- */
+/* --- RADIAL VIGNETTE OVERLAY --- */
 .card-inner::before {
   content: '';
   position: absolute;
@@ -369,40 +392,20 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  /* subtle 30% overlay */
+  background: radial-gradient(circle at center, rgba(5, 5, 5, 0.45) 0%, rgba(26, 26, 26, 0.75) 100%);
   z-index: 1;
   pointer-events: none;
 }
 
 /* --- NOISE TEXTURE --- */
 .noise-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  /* Always on top */
-  opacity: 0.12;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
+  display: none;
+  /* Removed for cinematic vignette */
 }
 
-/* Grain Animation */
+/* Grain Animation Disabled */
 .card-inner::after {
-  content: '';
-  position: absolute;
-  top: -100%;
-  left: -100%;
-  width: 300%;
-  height: 300%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.1;
-  pointer-events: none;
-  z-index: 10;
-  mix-blend-mode: soft-light;
+  content: none;
 }
 
 .card:hover .card-inner {
@@ -552,7 +555,7 @@ body {
 
 .modal-nav-btn {
   position: absolute;
-  top: 50%;
+  top: 85%;
   transform: translateY(-50%);
   background: none;
   border: none;
@@ -560,8 +563,8 @@ body {
   font-size: 2.5rem;
   cursor: pointer;
   z-index: 110;
-  padding: 2rem;
-  opacity: 0.3;
+  padding: 0rem;
+  opacity: 0.5;
   transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
 }
 
@@ -577,11 +580,11 @@ body {
 }
 
 .modal-nav-btn.prev {
-  left: 1rem;
+  left: 0.5rem;
 }
 
 .modal-nav-btn.next {
-  right: 1rem;
+  right: 0.5rem;
 }
 
 .modal-count-status {
@@ -603,7 +606,7 @@ body {
 }
 
 .modal-info {
-  padding: 24px 5rem 4rem 5rem;
+  padding: 32px 5rem 40px 5rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

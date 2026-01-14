@@ -87,15 +87,15 @@ function createCardElement(item) {
                 position: relative; z-index: 2;
                 display: flex; flex-direction: column; justify-content: center; align-items: center; 
                 height: 100%; font-family: 'Anton', sans-serif; font-weight: 800; 
-                color: ${item.color === '#f5f5dc' ? '#000' : '#fff'}; text-align: center;
+                color: item.color === '#fff'}; text-align: center;
             ">
                 <div style="font-size: 8rem; line-height: 0.8; opacity: 0.8;">${item.id}</div>
-                <div style="font-size: 1.2rem; text-transform: uppercase; margin-top: 1rem; opacity: 0.6;">${item.title}</div>
+                <div style="font-size: 2rem; font-weight: 100; text-transform: uppercase; margin-top: 1rem; opacity: 0.6;">${item.title}</div>
             </div> 
             <div style="
                 position: absolute; bottom: 1.5rem; left: 1.5rem; 
                 z-index: 2;
-                color: ${item.color === '#f5f5dc' ? '#000' : '#fff'}; 
+                color: item.color === '#f5f5dc'}; 
                 font-family: 'Inter', sans-serif; font-size: 0.8rem;
                 text-transform: uppercase; letter-spacing: 0.1em;
             ">${item.creator}</div>
@@ -243,7 +243,7 @@ function populateModal(item) {
         `;
     } else {
         modalMedia.innerHTML = `
-            <iframe src="https://www.youtube.com/embed/${item.videoId}?autoplay=1&mute=0&rel=0" 
+            <iframe src="https://www.youtube.com/watch?v=qFLhGq0060w&list=RDqFLhGq0060w&start_radio=1" 
                     allow="autoplay; encrypted-media" style="width:100%; height:100%; border:none;" allowfullscreen></iframe>
         `;
     }
