@@ -84,19 +84,21 @@ function createCardElement(item) {
     card.innerHTML = `
         <div class="card-inner" style="${bgStyle} border: 1px solid rgba(255,255,255,0.1);">
             <div style="
+                position: relative; z-index: 2;
                 display: flex; flex-direction: column; justify-content: center; align-items: center; 
                 height: 100%; font-family: 'Anton', sans-serif; font-weight: 800; 
                 color: ${item.color === '#f5f5dc' ? '#000' : '#fff'}; text-align: center;
             ">
                 <div style="font-size: 8rem; line-height: 0.8; opacity: 0.8;">${item.id}</div>
-                <div style="font-size: 1.2rem; text-transform: uppercase; margin-top: 1rem; opacity: 0.6;">${item.creator}</div>
+                <div style="font-size: 1.2rem; text-transform: uppercase; margin-top: 1rem; opacity: 0.6;">${item.title}</div>
             </div> 
             <div style="
                 position: absolute; bottom: 1.5rem; left: 1.5rem; 
+                z-index: 2;
                 color: ${item.color === '#f5f5dc' ? '#000' : '#fff'}; 
                 font-family: 'Inter', sans-serif; font-size: 0.8rem;
                 text-transform: uppercase; letter-spacing: 0.1em;
-            ">${item.title}</div>
+            ">${item.creator}</div>
         </div>
     `;
 
@@ -229,10 +231,22 @@ function populateModal(item) {
     btnPrev.disabled = currentIdx === 0;
     btnNext.disabled = currentIdx === state.currentFilteredData.length - 1;
 
-    modalMedia.innerHTML = `
-        <iframe src="https://www.youtube.com/embed/${item.videoId}?autoplay=1&mute=0&rel=0" 
-                allow="autoplay; encrypted-media" style="width:100%; height:100%; border:none;" allowfullscreen></iframe>
-    `;
+    if (item.videoUrl) {
+        modalMedia.innerHTML = `
+            <video src="${item.videoUrl}" 
+                   autoplay 
+                   loop 
+                   muted 
+                   playsinline 
+                   style="width:100%; height:100%; object-fit: cover;">
+            </video>
+        `;
+    } else {
+        modalMedia.innerHTML = `
+            <iframe src="https://www.youtube.com/embed/${item.videoId}?autoplay=1&mute=0&rel=0" 
+                    allow="autoplay; encrypted-media" style="width:100%; height:100%; border:none;" allowfullscreen></iframe>
+        `;
+    }
 }
 
 function navigateModal(direction) {

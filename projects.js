@@ -7,203 +7,147 @@
 
 window.GALLERY_PROJECTS = [
     {
-        title: "EDITORIAL PIECE 01",
-        creator: "STUDIO VIBE",
+        creator: "@cassy",
+        title: "TikTok Native Analyzer",
         image: "",
-        videoId: "5D4WpL0M-1I",
-        link: "https://example.com",
-        desc: "An experimental exploration of tactile digital surfaces and print-inspired museum aesthetics."
+        videoId: "",
+        videoUrl: "",
+        link: "https://ai.studio/apps/drive/1YUFR9HDmxneqYVYwE3yxeeEHPn4K9TQU",
+        desc: "See how 'Tiktoky' your video is before you post \n- Provide concrete suggestions or actions to enhance your video. E.g add voiceover, music or strengthen your hook \n- Predicts how well your tiktok video is going to perform against the industry/ country selected \n- Explain why it works or doesn't work"
     },
     {
-        title: "EDITORIAL PIECE 02",
-        creator: "ATELIER X",
+        creator: "@Taylor Henning",
+        title: "TikTok adBuilder Engine",
         image: "",
-        videoId: "UMU62Tj99_g",
-        link: "https://example.com",
-        desc: "Pushing the boundaries of modern web design with cinematic motion and high-fashion visuals."
+        videoId: "",
+        videoUrl: "",
+        link: "https://ai.studio/apps/drive/1x5QNW4stKMcETLwFzpBfzw4cXZeeZGC-?fullscreenApplet=true",
+        desc: "A slot machine for ad creatives.\n- It creates fresh, almost ready-to-build ad concepts by remixing different layouts, styles, and content.\n- Helps with brainstorming new ideas for ad creatives"
     },
     {
-        title: "EDITORIAL PIECE 03",
-        creator: "EXPERIMENTAL LAB",
+        creator: "@Matt R",
+        title: "Keystone Icon Forge",
         image: "",
-        videoId: "HV76k0f1b5A",
-        link: "https://example.com",
-        desc: "A study in sophisticated, slightly mysterious UI that prioritizes visual storytelling."
+        videoId: "",
+        videoUrl: "",
+        link: "https://ai.studio/apps/drive/1FV4w9IpFVT_5vx7B27hos8eI2U-mrLIK?fullscreenApplet=true",
+        desc: "When you can't find the perfect Keystone Icon, you can use Icon Forge to generate one."
     },
     {
-        title: "EDITORIAL PIECE 04",
-        creator: "CREATIVE UNIT 7",
+        creator: "@马至一",
+        title: "GTA6",
         image: "",
-        videoId: "d5gkLXsp-MI",
-        link: "https://example.com",
-        desc: "Curated and intentional motion design for a premium editorial experience."
+        videoId: "",
+        videoUrl: "",
+        link: "https://thegta6.vercel.app/",
+        desc: "The only GTA6 you can play right now: a frantic survival game where the police are replaced by cookie banners and your only mission is to find the real x button."
     },
     {
-        title: "EDITORIAL PIECE 05",
-        creator: "STUDIO VIBE",
+        creator: "@杨皓迪 and Max",
+        title: "NEON HOCKEY",
         image: "",
-        videoId: "gmY9y_XqKkc",
-        link: "https://example.com",
-        desc: "An experimental exploration of tactile digital surfaces and print-inspired museum aesthetics."
+        videoId: "",
+        videoUrl: "",
+        link: "https://magnetic-hockey-neon.vercel.app/",
+        desc: "Dominate the neon arena in NEON Hockey! Choose your geometric mech—from the swift Striker to the lethal Sector Samurai. Master unique skills like shadow clones and whirlwind slashes in this fast-paced 1v1 physics battle. Control the puck, outsmart your rival, and unleash magnetic chaos to score. Are you ready to win?"
     },
     {
-        title: "EDITORIAL PIECE 06",
-        creator: "ATELIER X",
+        creator: "@Muchen Feng",
+        title: "TTO new brand central vision",
         image: "",
-        videoId: "DAfFInyJZxA",
-        link: "https://example.com",
-        desc: "Pushing the boundaries of modern web design with cinematic motion and high-fashion visuals."
+        videoId: "",
+        videoUrl: "",
+        link: "https://ai.studio/apps/drive/1wKLIzGYIQVPFGvXuJ9w8U6gKjJYKVFhv?fullscreenApplet=true",
+        desc: "Reimagine TTO with a central brand hub"
     },
     {
-        title: "EDITORIAL PIECE 07",
-        creator: "EXPERIMENTAL LAB",
+        creator: "@李昂",
+        title: "TTO_brief_review preference prototype",
         image: "",
-        videoId: "k-a2tc_yD-M",
-        link: "https://example.com",
-        desc: "A study in sophisticated, slightly mysterious UI that prioritizes visual storytelling."
+        videoId: "",
+        videoUrl: "",
+        link: "https://ai.studio/apps/drive/1SswR94bw5ypVUZTa0drqv8sjgZzUSe8g?fullscreenApplet=true",
+        desc: "Prototype of a design solution for a real PRD in 26'Q1"
     },
     {
-        title: "EDITORIAL PIECE 08",
-        creator: "CREATIVE UNIT 7",
+        creator: "@Faith Lung",
+        title: "TTO Creator Project Detail Page 履單",
         image: "",
-        videoId: "aJ20X5XvKng",
-        link: "https://example.com",
-        desc: "Curated and intentional motion design for a premium editorial experience."
+        videoId: "",
+        videoUrl: "",
+        link: "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2216Rbfcf_IwV_47Wn8TCi9J-Edqh-Vh1TE%22%5D,%22action%22:%22open%22,%22userId%22:%22101810979797073518413%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing",
+        desc: "Prototyping the creator flow from campaign discovery to video submission"
     },
     {
-        title: "EDITORIAL PIECE 09",
-        creator: "STUDIO VIBE",
+        creator: "@Violet Tong",
+        title: "TikTok business profile",
         image: "",
-        videoId: "N6JtCg0N_k8",
-        link: "https://example.com",
-        desc: "An experimental exploration of tactile digital surfaces and print-inspired museum aesthetics."
+        videoId: "",
+        videoUrl: "",
+        link: "https://ai.studio/apps/drive/143P3HSSRtWcTRvOxET3elYIT4ty0wn-i",
+        desc: "Prototype of entering a profile specifically fits business needs\nSomehow it just can't recreate the interface based on my design file uploaded and the interaction can never be right"
     },
     {
-        title: "EDITORIAL PIECE 10",
-        creator: "ATELIER X",
+        creator: "@Eva Luo",
+        title: "Particle",
         image: "",
-        videoId: "JmKqQ87c1mI",
-        link: "https://example.com",
-        desc: "Pushing the boundaries of modern web design with cinematic motion and high-fashion visuals."
+        videoId: "",
+        videoUrl: "",
+        link: "",
+        desc: ""
     },
     {
-        title: "EDITORIAL PIECE 11",
-        creator: "EXPERIMENTAL LAB",
+        creator: "@陈聪",
+        title: "Fortune Cookie",
         image: "",
-        videoId: "F_S6aW-kC2g",
-        link: "https://example.com",
-        desc: "A study in sophisticated, slightly mysterious UI that prioritizes visual storytelling."
+        videoId: "",
+        videoUrl: "",
+        link: "https://www.figma.com/community/widget/1591724239831718838",
+        desc: "'Fortune Cookie' is a figma widget designed to add a small moment of delight to design work.. Just like the real thing, click to 'crack' the cookie and reveal a hidden message on a beautifully textured piece of paper."
     },
     {
-        title: "EDITORIAL PIECE 12",
-        creator: "CREATIVE UNIT 7",
+        creator: "@黎祯",
+        title: "TikTok One-Partner Exchange Solution review process",
         image: "",
-        videoId: "4QIZE708gJ4",
-        link: "https://example.com",
-        desc: "Curated and intentional motion design for a premium editorial experience."
+        videoId: "",
+        videoUrl: "",
+        link: "",
+        desc: ""
     },
     {
-        title: "EDITORIAL PIECE 13",
-        creator: "STUDIO VIBE",
+        creator: "@宋建洲",
+        title: "Interview Assistant",
         image: "",
-        videoId: "ekr2nIex040",
-        link: "https://example.com",
-        desc: "An experimental exploration of tactile digital surfaces and print-inspired museum aesthetics."
+        videoId: "",
+        videoUrl: "",
+        link: "https://ai.studio/apps/drive/1o5rgtyryL61eH5IKuQq3XbTNdQPRBOv6",
+        desc: "Help interviewees to evaluate candidates effectively based on each role's unique needs"
     },
     {
-        title: "EDITORIAL PIECE 14",
-        creator: "ATELIER X",
+        creator: "@王蓉",
+        title: "Dots Connector",
         image: "",
-        videoId: "-bjqFkG5c8s",
-        link: "https://example.com",
-        desc: "Pushing the boundaries of modern web design with cinematic motion and high-fashion visuals."
+        videoId: "",
+        videoUrl: "",
+        link: "Dots Connector - Quick Start Guide",
+        desc: "One click to capture, AI to summarize, Bitable to organize. Connect all dots!"
     },
     {
-        title: "EDITORIAL PIECE 15",
-        creator: "EXPERIMENTAL LAB",
+        creator: "@谢慧莺",
+        title: "Content Suite AI Agent",
         image: "",
-        videoId: "_R6z91B1u1o",
-        link: "https://example.com",
-        desc: "A study in sophisticated, slightly mysterious UI that prioritizes visual storytelling."
+        videoId: "",
+        videoUrl: "",
+        link: "",
+        desc: "Prototype of the Content Suite Agent vision"
     },
     {
-        title: "EDITORIAL PIECE 16",
-        creator: "CREATIVE UNIT 7",
+        creator: "@胡欣然",
+        title: "Cyber snake",
         image: "",
-        videoId: "E1x_Wc3u234",
-        link: "https://example.com",
-        desc: "Curated and intentional motion design for a premium editorial experience."
-    },
-    {
-        title: "EDITORIAL PIECE 17",
-        creator: "STUDIO VIBE",
-        image: "",
-        videoId: "q3zqJs7JUCQ",
-        link: "https://example.com",
-        desc: "An experimental exploration of tactile digital surfaces and print-inspired museum aesthetics."
-    },
-    {
-        title: "EDITORIAL PIECE 18",
-        creator: "ATELIER X",
-        image: "",
-        videoId: "P00zTFEf_WM",
-        link: "https://example.com",
-        desc: "Pushing the boundaries of modern web design with cinematic motion and high-fashion visuals."
-    },
-    {
-        title: "EDITORIAL PIECE 19",
-        creator: "EXPERIMENTAL LAB",
-        image: "",
-        videoId: "04X8_6lS3qI",
-        link: "https://example.com",
-        desc: "A study in sophisticated, slightly mysterious UI that prioritizes visual storytelling."
-    },
-    {
-        title: "EDITORIAL PIECE 20",
-        creator: "CREATIVE UNIT 7",
-        image: "",
-        videoId: "MVV_JmN9Jt8",
-        link: "https://example.com",
-        desc: "Curated and intentional motion design for a premium editorial experience."
-    },
-    {
-        title: "EDITORIAL PIECE 21",
-        creator: "STUDIO VIBE",
-        image: "",
-        videoId: "W7appxW3Wiw",
-        link: "https://example.com",
-        desc: "An experimental exploration of tactile digital surfaces and print-inspired museum aesthetics."
-    },
-    {
-        title: "EDITORIAL PIECE 22",
-        creator: "ATELIER X",
-        image: "",
-        videoId: "Kq5KjHVrYkE",
-        link: "https://example.com",
-        desc: "Pushing the boundaries of modern web design with cinematic motion and high-fashion visuals."
-    },
-    {
-        title: "EDITORIAL PIECE 23",
-        creator: "EXPERIMENTAL LAB",
-        image: "",
-        videoId: "5D4WpL0M-1I",
-        link: "https://example.com",
-        desc: "A study in sophisticated, slightly mysterious UI that prioritizes visual storytelling."
-    },
-    {
-        title: "EDITORIAL PIECE 24",
-        creator: "Ivy Lin",
-        image: "",
-        videoId: "UMU62Tj99_g",
-        link: "https://example.com",
-        desc: "Curated and intentional motion design for a premium editorial experience."
-    },
-    {
-        title: "EDITORIAL PIECE 25",
-        creator: "STUDIO VIBE",
-        image: "",
-        videoId: "HV76k0f1b5A",
-        link: "https://example.com",
-        desc: "An experimental exploration of tactile digital surfaces and print-inspired museum aesthetics."
+        videoId: "",
+        videoUrl: "",
+        link: "https://cyber-snake-r617.vercel.app/",
+        desc: "A cyberpunk-style Snake game built for speed and reflex.\nNeon visuals, smooth controls, and escalating challenge in a minimalist digital arena."
     }
 ];

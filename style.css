@@ -8,7 +8,7 @@
   /* Clean Bold Sans */
   --font-mono: 'Courier New', monospace;
 
-  --card-height: calc(100vh - 400px);
+  --card-height: calc(100vh - 300px);
   --card-width: calc(var(--card-height) * 16 / 9);
   --gap: 40px;
   --accent: #d43f3f;
@@ -63,7 +63,7 @@ body {
   font-family: var(--font-heading);
   font-size: 28px;
   /* Refined to 28px */
-  font-weight: 600;
+  font-weight: 500;
   /* Semi-bold */
   color: #fff;
   line-height: 1.1;
@@ -72,14 +72,14 @@ body {
 }
 
 .modal-creator {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.9rem;
-  color: var(--accent);
+  color: #fff;
   /* Red creator name */
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  font-weight: 700;
-  margin-bottom: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .modal-desc {
@@ -196,14 +196,14 @@ body {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   width: 100%;
-  letter-spacing: 0.15em;
+  letter-spacing: 0em;
   outline: none;
   text-transform: uppercase;
 }
 
 #searchInput::placeholder {
   color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.2em;
+  letter-spacing: 0em;
   font-size: 0.75rem;
 }
 
@@ -217,7 +217,7 @@ body {
   line-height: 1.1;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: 0em;
   margin: 0;
 }
 
@@ -258,8 +258,8 @@ body {
 /* --- CARD STACK CONTAINER --- */
 .stack-container {
   width: 100%;
-  height: calc(100vh - 250px);
-  margin-top: 250px;
+  height: calc(100vh - 260px);
+  margin-top: 220px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -280,7 +280,7 @@ body {
 /* Background Deck Layers (The "Strips" at the top) */
 .stack-background {
   position: absolute;
-  top: 0;
+  top: 10;
   left: 50%;
   transform: translateX(-50%);
   width: var(--card-width);
@@ -304,7 +304,7 @@ body {
 /* --- STACKED CARD --- */
 .card {
   position: absolute;
-  top: 0;
+  top: -10;
   left: 0;
   width: 100%;
   height: 100%;
@@ -359,6 +359,20 @@ body {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: box-shadow 0.6s var(--ease-out), border-color 0.3s;
+}
+
+/* --- DARK OVERLAY --- */
+.card-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  /* subtle 30% overlay */
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* --- NOISE TEXTURE --- */
@@ -572,11 +586,12 @@ body {
 
 .modal-count-status {
   font-family: var(--font-mono);
+  font-weight: 800;
   font-size: 0.75rem;
   color: var(--accent);
   letter-spacing: 0.2em;
   margin-bottom: 0.5rem;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .modal-media-wrapper iframe {
