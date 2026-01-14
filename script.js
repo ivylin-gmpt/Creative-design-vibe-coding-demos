@@ -40,14 +40,14 @@ function init() {
 }
 
 function generateData() {
-    const editorialPalette = ['#00441b', '#8b0000', '#00008b', '#f5f5dc'];
+    const editorialPalette = ['#00441b', '#8b0000', '#00008b', '#4c4c0cff'];
     const items = (typeof GALLERY_PROJECTS !== 'undefined') ? GALLERY_PROJECTS : [];
 
     return items.map((item, i) => ({
         ...item,
         id: i + 1,
         color: editorialPalette[i % editorialPalette.length],
-        link: item.link || `https://www.youtube.com/watch?v=${item.videoId}`
+        link: item.link || ``
     }));
 }
 
@@ -89,13 +89,13 @@ function createCardElement(item) {
                 height: 100%; font-family: 'Anton', sans-serif; font-weight: 800; 
                 color: item.color === '#fff'}; text-align: center;
             ">
-                <div style="font-size: 8rem; line-height: 0.8; opacity: 0.8;">${item.id}</div>
-                <div style="font-size: 2rem; font-weight: 100; text-transform: uppercase; margin-top: 1rem; opacity: 0.6;">${item.title}</div>
+                <div style="font-size: 8rem; line-height: 0.8; opacity: 1;">${item.id}</div>
+                <div style="font-size: 2rem; font-weight: 100; text-transform: uppercase; margin-top: 1rem; opacity: 0.8;">${item.title}</div>
             </div> 
             <div style="
                 position: absolute; bottom: 1.5rem; left: 1.5rem; 
                 z-index: 2;
-                color: item.color === '#f5f5dc'}; 
+                color: item.color === '#fff'}; 
                 font-family: 'Inter', sans-serif; font-size: 0.8rem;
                 text-transform: uppercase; letter-spacing: 0.1em;
             ">${item.creator}</div>
@@ -238,12 +238,22 @@ function populateModal(item) {
                    loop 
                    muted 
                    playsinline 
-                   style="width:100%; height:100%; object-fit: cover;">
+                   style="width:100%; height:100%; object-fit: cover; cursor: pointer;">
             </video>
         `;
+
+        // Add play/pause toggle on click
+        const video = modalMedia.querySelector('video');
+        video.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
     } else {
         modalMedia.innerHTML = `
-            <iframe src="https://www.youtube.com/watch?v=qFLhGq0060w&list=RDqFLhGq0060w&start_radio=1" 
+            <iframe src="" 
                     allow="autoplay; encrypted-media" style="width:100%; height:100%; border:none;" allowfullscreen></iframe>
         `;
     }

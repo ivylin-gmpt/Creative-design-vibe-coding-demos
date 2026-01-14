@@ -61,6 +61,15 @@ window.GALLERY_PROJECTS = [
         desc: "Dominate the neon arena in NEON Hockey! Choose your geometric mech—from the swift Striker to the lethal Sector Samurai. Master unique skills like shadow clones and whirlwind slashes in this fast-paced 1v1 physics battle. Control the puck, outsmart your rival, and unleash magnetic chaos to score. Are you ready to win?"
     },
     {
+        creator: "@Eva Luo",
+        title: "Particle",
+        image: "",
+        videoId: "",
+        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Eva_Recording_Particle.mov",
+        link: "",
+        desc: ""
+    },
+    {
         creator: "@Ang Li 李昂",
         title: "TTO_brief_review preference prototype",
         image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Ang_TTO_Brief_review_preference_prototype.png",
@@ -122,15 +131,6 @@ window.GALLERY_PROJECTS = [
         videoUrl: "",
         link: "https://ai.studio/apps/drive/143P3HSSRtWcTRvOxET3elYIT4ty0wn-i",
         desc: "Prototype of entering a profile specifically fits business needs\nSomehow it just can't recreate the interface based on my design file uploaded and the interaction can never be right"
-    },
-    {
-        creator: "@Eva Luo",
-        title: "Particle",
-        image: "",
-        videoId: "",
-        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Eva_Recording_Particle.mov",
-        link: "",
-        desc: ""
     },
     {
         creator: "@Zhen LI 黎祯",
