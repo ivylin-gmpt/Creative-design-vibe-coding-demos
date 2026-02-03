@@ -42,15 +42,17 @@ window.GALLERY_PROJECTS = [
         status: "Featured"
     },
     {
-        creator: "@Ang Li",
-        title: "TTO Brief Review Preference Prototype",
-        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Ang_TTO_Brief_review_preference_prototype.png",
+        creator: "@Yasong Xie",
+        title: "Creator Search AI Agent",
+        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Yasong_creator_search_agent.png",
         videoId: "",
-        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Vibe%20coding_Ang.mov",
-        link: "https://ai.studio/apps/drive/1SswR94bw5ypVUZTa0drqv8sjgZzUSe8g?fullscreenApplet=true",
-        desc: "Prototype of a design solution for a real PRD in 26'Q1.",
+        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/yasong_Creator%20search%20AI%20agent.mp4",
+        link: "https://ai.studio/apps/drive/1L5LIX4ZC23MvX5MpHTsRs0uwd4NKsuIr",
+        desc: "To build a product called AI search creator agent that can help user to improve the creator search efficiency with AI chat mode.",
         category: "Pitch ideas",
-        tags: ["TTO", "Prototype"]
+        tags: ["Vision", "Agent"],
+        status: "Featured"
+
     },
     {
         creator: "@Cassy Lim",
@@ -63,6 +65,28 @@ window.GALLERY_PROJECTS = [
         category: "Pitch ideas",
         tags: ["AI", "Creative Insights"],
         status: "Featured"
+    },
+    {
+        creator: "@Preacher Yang",
+        title: "NEON HOCKEY",
+        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Preacher_NEON%20HOCKEY.png",
+        videoId: "",
+        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Preacher_NEON%20HOCKEY.mp4",
+        link: "https://magnetic-hockey-neon.vercel.app/",
+        desc: "ominate the neon arena in NEON Hockey! Choose your geometric mech—from the swift Striker to the lethal Sector Samurai. Master unique skills like shadow clones and whirlwind slashes in this fast-paced 1v1 physics battle. Control the puck, outsmart your rival, and unleash magnetic chaos to score. Are you ready to win?",
+        category: "Have fun",
+        tags: ["Game"]
+    },
+    {
+        creator: "@Ang Li",
+        title: "TTO Brief Review Preference Prototype",
+        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Ang_TTO_Brief_review_preference_prototype.png",
+        videoId: "",
+        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Vibe%20coding_Ang.mov",
+        link: "https://ai.studio/apps/drive/1SswR94bw5ypVUZTa0drqv8sjgZzUSe8g?fullscreenApplet=true",
+        desc: "Prototype of a design solution for a real PRD in 26'Q1.",
+        category: "Pitch ideas",
+        tags: ["TTO", "Prototype"]
     },
     {
         creator: "@Taylor Henning",
@@ -85,6 +109,18 @@ window.GALLERY_PROJECTS = [
         desc: "Evaluate candidates effectively based on unique role needs.",
         category: "Productivity",
         tags: ["Interview", "Tool"]
+    },
+    {
+        creator: "@Muchen Feng",
+        title: "TTO New Brand Central Vision",
+        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Muchen_cover.png",
+        videoId: "",
+        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Mucheng_TTO.mov",
+        link: "https://aistudio.google.com/apps/drive/1wKLIzGYIQVPFGvXuJ9w8U6gKjJYKVFhv?fullscreenApplet=true",
+        desc: "Reimagine TTO with a central brand hub.",
+        category: "Pitch ideas",
+        tags: ["TTO", "Vision"],
+        status: "Featured"
     },
     {
         creator: "@Xinran Hu",
@@ -144,17 +180,15 @@ window.GALLERY_PROJECTS = [
         tags: ["AI", "Collaboration"]
     },
     {
-        creator: "@Yasong Xie",
-        title: "Creator Search AI Agent",
-        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Yasong_creator_search_agent.png",
+        creator: "@Faith Lung",
+        title: "TTO Creator Project Detail Page",
+        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Zhen_Li_.TikTok%20One-%20Partner%20Exchange%20Solution%20review%20processjpeg.jpeg",
         videoId: "",
-        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/yasong_Creator%20search%20AI%20agent.mp4",
-        link: "https://ai.studio/apps/drive/1L5LIX4ZC23MvX5MpHTsRs0uwd4NKsuIr",
-        desc: "To build a product called AI search creator agent that can help user to improve the creator search efficiency with AI chat mode.",
+        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Faith_.TTO%20Creator%20Project%20Detail%20Pagemov.mov",
+        link: "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2216Rbfcf_IwV_47Wn8TCi9J-Edqh-Vh1TE%22%5D,%22action%22:%22open%22,%22userId%22:%22101810979797073518413%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing",
+        desc: "Prototyping the creator flow from campaign discovery to video submission",
         category: "Pitch ideas",
-        tags: ["Vision", "Agent"],
-        status: "Featured"
-
+        tags: ["TTO", "Vision"]
     },
     {
         creator: "@Eva Luo",
@@ -177,18 +211,5 @@ window.GALLERY_PROJECTS = [
         desc: "A comprehensive dashboard for advertisers to manage creative deliverables, review video assets, and approve concept files for Studio and Talent campaigns.",
         category: "Pitch ideas",
         tags: ["TTO", "Vision"]
-    },
-    {
-        creator: "@Muchen Feng",
-        title: "TTO New Brand Central Vision",
-        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Zhen_Li_.TikTok%20One-%20Partner%20Exchange%20Solution%20review%20processjpeg.jpeg",
-        videoId: "",
-        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Mucheng_TTO.mov",
-        link: "https://aistudio.google.com/apps/drive/1wKLIzGYIQVPFGvXuJ9w8U6gKjJYKVFhv?fullscreenApplet=true",
-        desc: "Reimagine TTO with a central brand hub.",
-        category: "Pitch ideas",
-        tags: ["TTO", "Vision"],
-        status: "Featured"
-
     }
 ];
