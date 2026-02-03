@@ -271,7 +271,7 @@ body {
   position: sticky;
   top: 0;
   width: 90%;
-  max-width: 1200px;
+  max-width: 1600px;
   padding-top: 2rem;
   align-self: center;
   backdrop-filter: blur(20px);
@@ -345,13 +345,19 @@ body {
 
 /* Video Section */
 .modal-media-wrapper {
-  width: 100%;
+  position: relative;
+  width: auto;
+  max-width: 1600px;
+  height: auto;
+  max-height: 80vh;
+  margin: 2rem auto;
   background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
-  position: relative;
 }
 
 .modal-media-wrapper::after {
@@ -363,17 +369,19 @@ body {
   height: 100%;
   background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.4) 100%);
   pointer-events: none;
+  z-index: 2;
 }
 
 .modal-media-wrapper video,
 .modal-media-wrapper .no-preview {
-  width: 90%;
-  max-width: 1200px;
-  aspect-ratio: 16 / 9;
-  border-radius: 8px;
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
-  object-fit: cover;
-  background: #111;
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  background: transparent;
+  display: block;
 }
 
 /* Navigation Arrows */

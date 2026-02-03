@@ -60,7 +60,7 @@ function createCardElement(item) {
     const tagsHtml = item.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
     const imageContent = item.image
-        ? `<img src="${item.image}" class="card-image" alt="${item.title}" loading="lazy" style="width:100%; height:100%; object-fit:cover;">`
+        ? `<img src="${item.image}" class="card-image" alt="${item.title}" loading="lazy" style="width:100%; height:100%; object-fit:contain;">`
         : `<div style="width:100%; height:100%; background: #111; display:flex; align-items:center; justify-content:center; color:#333;">NO PREVIEW</div>`;
 
     // Only show status if it exists and is not "Prototype"

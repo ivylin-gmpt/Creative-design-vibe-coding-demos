@@ -182,7 +182,7 @@ window.GALLERY_PROJECTS = [
     {
         creator: "@Faith Lung",
         title: "TTO Creator Project Detail Page",
-        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Zhen_Li_.TikTok%20One-%20Partner%20Exchange%20Solution%20review%20processjpeg.jpeg",
+        image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Faith-cover-image.png",
         videoId: "",
         videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Faith_.TTO%20Creator%20Project%20Detail%20Pagemov.mov",
         link: "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2216Rbfcf_IwV_47Wn8TCi9J-Edqh-Vh1TE%22%5D,%22action%22:%22open%22,%22userId%22:%22101810979797073518413%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing",
