@@ -43,7 +43,7 @@ window.GALLERY_PROJECTS = [
     },
     {
         creator: "@Ang Li",
-        title: "TTO brief review preference prototype",
+        title: "TTO Brief Review Preference Prototype",
         image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Ang_TTO_Brief_review_preference_prototype.png",
         videoId: "",
         videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Vibe%20coding_Ang.mov",
@@ -66,7 +66,7 @@ window.GALLERY_PROJECTS = [
     },
     {
         creator: "@Taylor Henning",
-        title: "TikTok adBuilder Engine",
+        title: "TikTok AdBuilder Engine",
         image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Taylor_TikTokAdBuilder.png",
         videoId: "",
         videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Taylor_TikTokAdBuilder.mov",
@@ -88,7 +88,7 @@ window.GALLERY_PROJECTS = [
     },
     {
         creator: "@Xinran Hu",
-        title: "Cyber snake",
+        title: "Cyber Snake",
         image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Xinran_Cyber%20snake.png",
         videoId: "",
         videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Xinran_Cyber%20snake.mp4",
@@ -110,12 +110,12 @@ window.GALLERY_PROJECTS = [
     },
     {
         creator: "@Shirley Xie",
-        title: "Prototype of the Content Suite Agent vision",
+        title: "Content Suite AI Agent",
         image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Shirley_Content%20Suite%20AI%20Agent.png",
         videoId: "",
         videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Shirley_Content%20Suite%20AI%20Agent.mov",
         link: "https://ai.studio/apps/drive/1qkT4McvSZCaBveLw1kpAZHvHuE1XF_1L?fullscreenApplet=true",
-        desc: "Prototype of the Content Suite Agent vision",
+        desc: "Prototype of the Content Suite Agent vision.",
         category: "Pitch ideas",
         tags: ["Content Suite", "Vision"]
     },
@@ -126,7 +126,7 @@ window.GALLERY_PROJECTS = [
         videoId: "",
         videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/linda_Symphony%20Prompt%20Box%20Animation.mp4",
         link: "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221m2BK4461Lgx1zE80vAzQ5f_bswpLmmHM%22%5D,%22action%22:%22open%22,%22userId%22:%22102388725345508162404%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing",
-        desc: "Prototype exploration of some animation/visual effects to the prompt box on Symphony",
+        desc: "Prototype exploration of some animation/visual effects to the prompt box on Symphony.",
         category: "Pitch ideas",
         tags: ["Symphony", "Animation"],
         status: "Featured"
@@ -134,7 +134,7 @@ window.GALLERY_PROJECTS = [
     },
     {
         creator: "@Bijun Liang",
-        title: "Human-powered AI canvas",
+        title: "Human-Powered AI Canvas",
         image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Bijun_canvas.png",
         videoId: "",
         videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/bijun_humanpowered_canvas.m4v",
@@ -145,7 +145,7 @@ window.GALLERY_PROJECTS = [
     },
     {
         creator: "@Yasong Xie",
-        title: "Creator search AI agent",
+        title: "Creator Search AI Agent",
         image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Yasong_creator_search_agent.png",
         videoId: "",
         videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/yasong_Creator%20search%20AI%20agent.mp4",
@@ -163,13 +163,13 @@ window.GALLERY_PROJECTS = [
         videoId: "",
         videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Eva_Recording_Particle.mov",
         link: "",
-        desc: "Make heart beat by hand gesture",
+        desc: "Make heart beat by hand gesture.",
         category: "Have fun",
         tags: ["Creativity"]
     },
     {
         creator: "@Zhen Li",
-        title: "TikTok One- Partner Exchange Solution review process",
+        title: "TikTok One - Partner Exchange Solution Review Process",
         image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Zhen_Li_.TikTok%20One-%20Partner%20Exchange%20Solution%20review%20processjpeg.jpeg",
         videoId: "",
         videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Zhen_Li_.TikTok%20One-%20Partner%20Exchange%20Solution%20review%20processjpeg.jpeg",
@@ -180,12 +180,12 @@ window.GALLERY_PROJECTS = [
     },
     {
         creator: "@Muchen Feng",
-        title: "TTO new brand central vision",
+        title: "TTO New Brand Central Vision",
         image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Zhen_Li_.TikTok%20One-%20Partner%20Exchange%20Solution%20review%20processjpeg.jpeg",
         videoId: "",
         videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/Mucheng_TTO.mov",
         link: "https://aistudio.google.com/apps/drive/1wKLIzGYIQVPFGvXuJ9w8U6gKjJYKVFhv?fullscreenApplet=true",
-        desc: "Reimagine TTO with a central brand hub",
+        desc: "Reimagine TTO with a central brand hub.",
         category: "Pitch ideas",
         tags: ["TTO", "Vision"],
         status: "Featured"

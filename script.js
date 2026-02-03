@@ -20,6 +20,7 @@ function init() {
     renderGrid();
     setupEventListeners();
     setupIntersectionObserver();
+
 }
 
 function generateData() {
@@ -231,5 +232,7 @@ function closeModal() {
     modalMedia.innerHTML = '';
     document.body.style.overflow = '';
 }
+
+
 
 init();
