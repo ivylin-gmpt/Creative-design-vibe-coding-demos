@@ -4,12 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Design Team · Showcase</title>
-    <!-- Fonts: Anton (Condensed Bold), Inter (Body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <title>Creative Design Team -- Vibe Coding Projects</title>
+    <!-- Fonts: TikTok Sans -->
+    <link href="https://fonts.cdnfonts.com/css/tiktok-sans" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,75 +16,86 @@
     <!-- <div class="noise-overlay"></div> -->
     <div class="vignette-overlay"></div>
 
-    <!-- UI Header -->
-    <header class="app-header">
-        <div class="header-left">
-            <h1 class="brand-title">
-                <span class="title-bold">Vibe coding demos</span><br>
-                <span class="title-regular">by creative design team</span>
-            </h1>
-            <div class="brand-helper-wrapper">
-                <p class="brand-helper">Built by @ivy lin & Gemini 3 flash</p>
-            </div>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
         </div>
+        <div class="nav-right">
+        </div>
+    </nav>
 
-        <div class="header-right">
-            <div class="counter" id="activeCounter">01 — --</div>
-            <div class="search-container">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <input type="text" id="searchInput" placeholder="SEARCH..." autocomplete="off">
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">Creative Design Team<br>Vibe Coding Projects</h1>
+    </section>
+
+    <!-- Category Filter Bar -->
+    <div class="category-filter-wrapper">
+        <div class="category-chips">
+            <button class="chip active" data-filter="All">All projects</button>
+            <button class="chip" data-filter="Featured">✨ Featured</button>
+            <button class="chip" data-filter="Pitch ideas">💡 Pitch ideas</button>
+            <button class="chip" data-filter="Have fun">🥳 Have fun</button>
+            <button class="chip" data-filter="Productivity">⚒️ Boost productivity</button>
         </div>
-    </header>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+        </div>
+    </div>
 
     <!-- Main Canvas -->
-    <main class="stack-container" id="stackTrack">
-        <!-- Background Deck Layers -->
-        <div class="stack-background" id="stackBackground"></div>
-
-        <!-- Active/Animating Cards Area -->
-        <div class="stack-active-area" id="stackActiveArea"></div>
+    <main class="grid-wrapper" id="scrollWrapper">
+        <div class="grid-container" id="gridContainer">
+            <!-- Cards will be injected here -->
+        </div>
     </main>
 
-    <!-- Minimalist Modal -->
+    <!-- Immersive Project Viewer -->
     <div class="modal-overlay" id="modal">
         <div class="modal-backdrop"></div>
         <div class="modal-container">
-            <button class="modal-close-btn" id="modalClose">&times;</button>
-
-            <div class="modal-media-wrapper" id="modalMedia">
-
-                <!-- Video/Content injected here -->
-            </div>
-
-            <div class="modal-info">
-
-                <!-- Navigation Buttons -->
-                <button class="modal-nav-btn prev" id="modalPrev">&#8592;</button>
-                <button class="modal-nav-btn next" id="modalNext">&#8594;</button>
-
-
-                <div class="info-text">
-                    <div class="modal-count-status" id="modalCounter">01 / 25</div>
-                    <div class="modal-header-row">
-                        <h2 id="modalTitle">
-                            Project Title
-                        </h2>
+            <!-- Sticky Top Header -->
+            <header class="modal-header">
+                <div class="header-left">
+                    <h3 id="headerTitle">Project Title</h3>
+                    <div id="modalDesc">Project description goes here...
                     </div>
-                    <p class="modal-creator" id="modalCreator">Creator Name</p>
-                    <p class="modal-desc" id="modalDesc">Two lines of project description go here to explain the vision
-                        and experimental approach.</p>
-                    <a href="#" id="modalLink" target="_blank" class="modal-cta">Visit project→</a>
-
+                    <span id="headerCreator">@creator</span>
                 </div>
+                <div class="header-right">
+                    <a href="#" id="headerLink" target="_blank" class="header-cta-btn">Open project</a>
+                    <button class="modal-close-btn" id="modalClose" aria-label="Close viewer">&times;</button>
+                </div>
+            </header>
+
+            <div class="modal-scroll-body">
+                <!-- Video Player Section -->
+                <div class="modal-media-wrapper" id="modalMedia">
+                    <!-- Video/Content injected here -->
+                </div>
+
+                <!-- Content Section -->
             </div>
 
+            <!-- Navigation Controls -->
+            <button class="modal-nav-arrow prev" id="modalPrev" aria-label="Previous project">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button class="modal-nav-arrow next" id="modalNext" aria-label="Next project">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
         </div>
     </div>
+
+    <footer class="page-footer">
+        <p>Built by @Ivy Lin and Gemini 3 Flash 👩🏻‍💻</p>
+    </footer>
 
     <!-- Data & Logic -->
     <script src="projects.js"></script>

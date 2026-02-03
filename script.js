@@ -1,104 +1,102 @@
-
 // 1. Constants & State
-const CONFIG = {
-    cardWidth: '90vw',
-    cardHeight: '50.625vw', // 16:9
-    cycleDelay: 1800, // Time between swaps
-    transitionDuration: 350,
-    deckLayers: 5
-};
-
 let state = {
     allData: [],
     currentFilteredData: [],
-    activeIndex: 0,
-    isPaused: false,
-    currentModalIndex: -1
+    activeCategory: 'All',
+    searchQuery: '',
+    isAnimating: false
 };
 
 // 2. DOM Elements
-const stackActiveArea = document.getElementById('stackActiveArea');
-const stackBackground = document.getElementById('stackBackground');
-const counter = document.getElementById('activeCounter');
+const gridContainer = document.getElementById('gridContainer');
 const searchInput = document.getElementById('searchInput');
-let cycleInterval;
+const chips = document.querySelectorAll('.chip');
 
 // 3. Initialization
 function init() {
     state.allData = generateData();
     state.currentFilteredData = [...state.allData];
 
-    renderDeck();
-    updateCounter();
-
-    // Initial card setup
-    renderInitialCard();
-    startCycle();
-
-    // Event Listeners
+    renderGrid();
     setupEventListeners();
+    setupIntersectionObserver();
 }
 
 function generateData() {
-    const editorialPalette = ['#00441b', '#8b0000', '#00008b', '#4c4c0cff'];
     const items = (typeof GALLERY_PROJECTS !== 'undefined') ? GALLERY_PROJECTS : [];
-
-    return items.map((item, i) => ({
-        ...item,
-        id: i + 1,
-        color: editorialPalette[i % editorialPalette.length],
-        link: item.link || ``
-    }));
+    return items.map((item, i) => {
+        return {
+            ...item,
+            id: i + 1,
+            category: item.category || 'Pitch ideas',
+            tags: item.tags || ['Concept'],
+            status: item.status
+        };
+    });
 }
 
-function renderDeck() {
-    stackBackground.innerHTML = '';
-    for (let i = 1; i <= CONFIG.deckLayers; i++) {
-        const layer = document.createElement('div');
-        layer.className = 'deck-layer';
-        // Offset upward and inset horizontally
-        const yOffset = -i * 6;
-        const scale = 1 - (i * 0.01);
-        layer.style.transform = `translateY(${yOffset}px) scaleX(${scale})`;
-        layer.style.backgroundColor = 'rgba(255,255,255,0.03)';
-        layer.style.zIndex = CONFIG.deckLayers - i;
-        stackBackground.appendChild(layer);
+function renderGrid() {
+    gridContainer.innerHTML = '';
+
+    if (state.currentFilteredData.length === 0) {
+        gridContainer.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 6rem; color: #555; font-size: 1.2rem;">NO IDEAS FOUND FOR THIS FILTER</div>';
+        return;
     }
-}
 
-function renderInitialCard() {
-    if (state.currentFilteredData.length === 0) return;
-    const item = state.currentFilteredData[state.activeIndex];
-    const card = createCardElement(item);
-    stackActiveArea.appendChild(card);
+    state.currentFilteredData.forEach((item) => {
+        const card = createCardElement(item);
+        gridContainer.appendChild(card);
+    });
+
+    // Re-observe new cards for entrance animations
+    setTimeout(setupIntersectionObserver, 50);
 }
 
 function createCardElement(item) {
     const card = document.createElement('div');
     card.className = 'card';
 
-    const bgStyle = item.image
-        ? `background-image: url('${item.image}'); background-size: cover; background-position: center;`
-        : `background-color: ${item.color};`;
+    const tagsHtml = item.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+
+    const imageContent = item.image
+        ? `<img src="${item.image}" class="card-image" alt="${item.title}" loading="lazy" style="width:100%; height:100%; object-fit:cover;">`
+        : `<div style="width:100%; height:100%; background: #111; display:flex; align-items:center; justify-content:center; color:#333;">NO PREVIEW</div>`;
+
+    // Only show status if it exists and is not "Prototype"
+    const showStatus = item.status && item.status.toLowerCase() !== 'prototype';
+    let statusHtml = '';
+
+    if (showStatus) {
+        const isFeatured = item.status.toLowerCase() === 'featured';
+        const iconHtml = isFeatured ? `
+            <svg class="featured-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="url(#featured-gradient)"/>
+                <defs>
+                    <linearGradient id="featured-gradient" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FF5D5D"/>
+                        <stop offset="0.5" stop-color="#5D5DFF"/>
+                        <stop offset="1" stop-color="#52FBFF"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        ` : '';
+        statusHtml = `<div class="card-status ${isFeatured ? 'status-featured' : ''}">${iconHtml}${item.status}</div>`;
+    }
 
     card.innerHTML = `
-        <div class="card-inner" style="${bgStyle} border: 1px solid rgba(255,255,255,0.1);">
-            <div style="
-                position: relative; z-index: 2;
-                display: flex; flex-direction: column; justify-content: center; align-items: center; 
-                height: 100%; font-family: 'Anton', sans-serif; font-weight: 800; 
-                color: item.color === '#fff'}; text-align: center;
-            ">
-                <div style="font-size: 12rem; line-height: 1; opacity: 1;">${item.id}</div>
-                <div style="font-size: 4rem; font-weight: 100; text-transform: uppercase; margin-top: 1rem; opacity: 0.8;">${item.title}</div>
-            </div> 
-            <div style="
-                position: absolute; bottom: 1.5rem; left: 1.5rem; 
-                z-index: 2;
-                color: item.color === '#fff'}; 
-                font-family: 'Inter', sans-serif; font-size: 0.8rem;
-                text-transform: uppercase; letter-spacing: 0.1em;
-            ">${item.creator}</div>
+        <div class="card-image-wrapper">
+            ${statusHtml}
+            ${imageContent}
+        </div>
+        <div class="card-meta">
+            <div class="card-title-row">
+                <span class="card-title-meta">${item.title}</span>
+            </div>
+            <p class="card-desc">${item.desc || 'No description provided for this creative concept.'}</p>
+            <div class="card-footer">
+                <div class="card-tags">${tagsHtml}</div>
+                <span class="card-creator">${item.creator}</span>
+            </div>
         </div>
     `;
 
@@ -106,64 +104,52 @@ function createCardElement(item) {
     return card;
 }
 
-// 4. Animation Cycle
-function startCycle() {
-    clearInterval(cycleInterval);
-    if (state.currentFilteredData.length <= 1) return;
+// 4. Filtering Logic
+function applyFilters() {
+    state.currentFilteredData = state.allData.filter(item => {
+        const matchesCategory = state.activeCategory === 'All' ||
+            (state.activeCategory === 'Featured' ? (item.status && item.status.toLowerCase() === 'featured') : item.category === state.activeCategory);
+        const matchesSearch = item.title.toLowerCase().includes(state.searchQuery) ||
+            item.creator.toLowerCase().includes(state.searchQuery) ||
+            item.desc.toLowerCase().includes(state.searchQuery) ||
+            (item.tags && item.tags.some(tag => tag.toLowerCase().includes(state.searchQuery)));
+        return matchesCategory && matchesSearch;
+    });
 
-    cycleInterval = setInterval(() => {
-        if (!state.isPaused) {
-            nextCard();
-        }
-    }, CONFIG.cycleDelay);
+    renderGrid();
 }
 
-function nextCard() {
-    const outgoingCard = stackActiveArea.querySelector('.card:not(.card-incoming)');
-    if (!outgoingCard) return;
+// 5. Entrance Animations
+function setupIntersectionObserver() {
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-    // Increment index
-    state.activeIndex = (state.activeIndex + 1) % state.currentFilteredData.length;
-    updateCounter();
-
-    const nextItem = state.currentFilteredData[state.activeIndex];
-    const incomingCard = createCardElement(nextItem);
-
-    // Apply animation classes
-    outgoingCard.classList.add('card-outgoing');
-    incomingCard.classList.add('card-incoming');
-
-    stackActiveArea.appendChild(incomingCard);
-
-    // Cleanup after transition
-    setTimeout(() => {
-        if (outgoingCard.parentNode === stackActiveArea) {
-            stackActiveArea.removeChild(outgoingCard);
-        }
-        incomingCard.classList.remove('card-incoming');
-    }, CONFIG.transitionDuration);
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
 }
 
-// 5. Interactions & UI
+// 6. Interactions
 function setupEventListeners() {
-    // Hover pause
-    const container = document.getElementById('stackTrack');
-    container.addEventListener('mouseenter', () => state.isPaused = true);
-    container.addEventListener('mouseleave', () => state.isPaused = false);
-
     // Search
     searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase();
+        state.searchQuery = e.target.value.toLowerCase();
+        applyFilters();
+    });
 
-        state.currentFilteredData = state.allData.filter(item => {
-            const idStr = String(item.id).padStart(2, '0');
-            return item.title.toLowerCase().includes(query) ||
-                item.creator.toLowerCase().includes(query) ||
-                idStr.includes(query) ||
-                String(item.id).includes(query);
+    // Category Chips
+    chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            chips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            state.activeCategory = chip.getAttribute('data-filter');
+            applyFilters();
         });
-
-        resetStack();
     });
 
     // Modal Events
@@ -179,36 +165,12 @@ function setupEventListeners() {
     });
 }
 
-function resetStack() {
-    clearInterval(cycleInterval);
-    stackActiveArea.innerHTML = '';
-    state.activeIndex = 0;
-
-    if (state.currentFilteredData.length === 0) {
-        stackActiveArea.innerHTML = '<div style="color: #444; font-family: sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; text-align: center; width: 100%;">NO RESULTS FOUND</div>';
-    } else {
-        renderInitialCard();
-        startCycle();
-    }
-    updateCounter();
-}
-
-function updateCounter() {
-    if (!counter) return;
-    const current = state.currentFilteredData.length === 0 ? 0 : state.activeIndex + 1;
-    const total = state.currentFilteredData.length;
-    counter.textContent = `${String(current).padStart(2, '0')} — ${String(total).padStart(2, '0')}`;
-}
-
-// 6. Modal Functions (Re-adapted)
+// 7. Modal Functions
 const modal = document.getElementById('modal');
-const modalMedia = document.getElementById('modalMedia');
-const modalTitle = document.getElementById('modalTitle');
-const modalCreator = document.getElementById('modalCreator');
+const modalCreator = document.getElementById('headerCreator');
 const modalDesc = document.getElementById('modalDesc');
-const modalLink = document.getElementById('modalLink');
-const modalNavCounter = document.getElementById('modalCounter');
-const modalInfo = document.querySelector('.modal-info');
+const headerLink = document.getElementById('headerLink');
+const headerTitle = document.getElementById('headerTitle');
 const btnPrev = document.getElementById('modalPrev');
 const btnNext = document.getElementById('modalNext');
 
@@ -216,49 +178,37 @@ function openArtifact(item) {
     state.currentModalIndex = state.currentFilteredData.findIndex(i => i.id === item.id);
     populateModal(item);
     modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling background
 }
 
 function populateModal(item) {
     const currentIdx = state.currentFilteredData.findIndex(i => i.id === item.id);
+    const total = state.currentFilteredData.length;
 
-    modalTitle.textContent = item.title;
-    modalCreator.textContent = item.creator;
-    modalDesc.textContent = item.desc;
-    modalLink.href = item.link;
+    headerTitle.textContent = item.title;
+    modalCreator.textContent = `${item.creator}`;
+    modalDesc.textContent = item.desc || 'No description provided for this creative concept.';
+    headerLink.href = item.link || '#';
 
-    if (modalNavCounter) {
-        modalNavCounter.textContent = `${String(currentIdx + 1).padStart(2, '0')} / ${String(state.currentFilteredData.length).padStart(2, '0')}`;
-    }
-
-    // Update Nav Buttons
     btnPrev.disabled = currentIdx === 0;
-    btnNext.disabled = currentIdx === state.currentFilteredData.length - 1;
+    btnNext.disabled = currentIdx === total - 1;
 
+    // Handle Media
     if (item.videoUrl) {
         modalMedia.innerHTML = `
-            <video src="${item.videoUrl}" 
-                   autoplay 
-                   loop 
-                   muted 
-                   playsinline 
-                   style="width:100%; height:100%; object-fit: cover; cursor: pointer;">
-            </video>
+            <video src="${item.videoUrl}" autoplay loop muted playsinline class="viewer-video"></video>
         `;
-
-        // Add play/pause toggle on click
         const video = modalMedia.querySelector('video');
         video.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
+            if (video.paused) video.play();
+            else video.pause();
         });
-    } else {
+    } else if (item.image) {
         modalMedia.innerHTML = `
-            <iframe src="" 
-                    allow="autoplay; encrypted-media" style="width:100%; height:100%; border:none;" allowfullscreen></iframe>
+            <img src="${item.image}" class="viewer-video" style="object-fit: contain;">
         `;
+    } else {
+        modalMedia.innerHTML = `<div class="no-preview">NO PREVIEW</div>`;
     }
 }
 
@@ -268,28 +218,18 @@ function navigateModal(direction) {
     if (newIdx < 0 || newIdx >= state.currentFilteredData.length) return;
 
     state.isAnimating = true;
-
-    // Start transition
-    modalMedia.classList.add('content-updating');
-    modalInfo.classList.add('content-updating');
+    populateModal(state.currentFilteredData[newIdx]);
+    state.currentModalIndex = newIdx;
 
     setTimeout(() => {
-        state.currentModalIndex = newIdx;
-        populateModal(state.currentFilteredData[state.currentModalIndex]);
-
-        // Small delay to allow content to "settle" before fading in
-        setTimeout(() => {
-            modalMedia.classList.remove('content-updating');
-            modalInfo.classList.remove('content-updating');
-            state.isAnimating = false;
-        }, 50);
-    }, 400); // Sync with CSS transition
+        state.isAnimating = false;
+    }, 500);
 }
 
 function closeModal() {
     modal.classList.remove('active');
     modalMedia.innerHTML = '';
+    document.body.style.overflow = '';
 }
 
-// Boot
 init();
