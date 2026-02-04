@@ -271,7 +271,7 @@ body {
   position: sticky;
   top: 0;
   width: 90%;
-  max-width: 1600px;
+  max-width: 1200px;
   padding-top: 2rem;
   align-self: center;
   backdrop-filter: blur(20px);
@@ -347,7 +347,7 @@ body {
 .modal-media-wrapper {
   position: relative;
   width: auto;
-  max-width: 1600px;
+  max-width: 1200px;
   height: auto;
   max-height: 80vh;
   margin: 2rem auto;

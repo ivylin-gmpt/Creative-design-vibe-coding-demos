@@ -206,7 +206,7 @@ window.GALLERY_PROJECTS = [
         title: "TikTok One - Partner Exchange Solution Review Process",
         image: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Zhen_Li_.TikTok%20One-%20Partner%20Exchange%20Solution%20review%20processjpeg.jpeg",
         videoId: "",
-        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Images/Zhen_Li_.TikTok%20One-%20Partner%20Exchange%20Solution%20review%20processjpeg.jpeg",
+        videoUrl: "https://eimgzcqbrdojesx5.public.blob.vercel-storage.com/Videos/zhen%20li.mov",
         link: "https://ai.studio/apps/drive/1FaO2lklgGnY-bB8KxeF0y_fszKe7Xb6N",
         desc: "A comprehensive dashboard for advertisers to manage creative deliverables, review video assets, and approve concept files for Studio and Talent campaigns.",
         category: "Pitch ideas",
